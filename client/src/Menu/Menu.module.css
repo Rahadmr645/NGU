@@ -1,0 +1,31 @@
+.menuContainer{
+    width: auto;
+    margin: 0px 100px;
+    margin-top: 50px;
+    height: auto;
+
+}
+.menuContainer h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.menuItems  {
+    display: flex;
+    overflow-x: scroll;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.menuItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.border{
+    border: 3px solid tomato;
+    border-radius: 50%;
+}
