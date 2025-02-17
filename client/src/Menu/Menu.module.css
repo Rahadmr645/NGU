@@ -29,3 +29,24 @@
     border: 3px solid tomato;
     border-radius: 50%;
 }
+
+
+@media (max-width: 475px) {
+  .menuContainer{
+    width: 470px;
+    margin: 10px;
+    margin-top: 50px;
+    height: auto;
+
+}
+.menuContainer h3{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+.menuItem img {
+    width: 100px;
+}
+}

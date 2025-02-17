@@ -53,3 +53,28 @@
     background-color: black;
     color: white;
 }
+
+
+
+
+
+@media (max-width:475px) {
+  .headerContainer {
+    width: 475px;
+    height: 50vh;
+    border: none;
+    border-radius: 10px;
+    background: url('../assets/header_img.png') no-repeat center/cover;
+    margin: 50px 0px 0px 10px;
+    position: relative;
+}
+.hederContent {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    animation: fadIn 1.5s ease-in-out;
+}
+} 

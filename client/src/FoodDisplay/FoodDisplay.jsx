@@ -10,7 +10,8 @@ const FoodDisplay = ({ id, name, image, price, desc, catagory }) => {
         <img src={assets.rating_starts} alt="" />
       </div>
       <p>{desc}</p>
-      <p>{price}</p>
+      <p style={{color:"tomato",fontWeight
+      :"bold"}}>${price}</p>
     </div>
   )
 }

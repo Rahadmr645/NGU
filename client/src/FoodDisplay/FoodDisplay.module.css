@@ -1,7 +1,10 @@
-.displayContainer{
+.displayContainer {
     margin: 0px 100px;
     margin-top: 30px;
     width: 310px;
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
 }
 .displayContainer>img{
     width: 300px;
@@ -25,3 +28,26 @@
 }
 
 
+
+@media (max-width:475px) {
+    .displayContainer{
+    width: 400px;
+    margin: 30px 20px 0px 20px;
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px; 
+} 
+
+.displayContainer>img{
+    width: 400px;
+    border-radius: 10px 10px 0px 0px ;
+}
+.nameRatings {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    align-items: center;
+    
+}
+}
