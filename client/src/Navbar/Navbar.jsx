@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState,useContext } from 'react'
 import styles from './Navbar.module.css';
 import { assets } from '../assets/assets'
+import {Context } from '../Context/StoreContext' ;
 const Navbar = () => {
     const [select, setSelect] = useState('home');
-    useEffect(() => {
-        console.log(select)
-    },[select])
+    const {setShowLogin} = useContext(Context) ;
     return (
         <div className={styles.navItemContainer}>
             <div className={styles.leftSection}>
@@ -25,7 +24,7 @@ const Navbar = () => {
                     <img src={assets.basket_icon} alt="" />
                     <div></div>
                 </div>
-                <button>SignUp</button>
+                <button onClick={() => setShowLogin(true)}>SignUp</button>
             </div>
         </div>
     )

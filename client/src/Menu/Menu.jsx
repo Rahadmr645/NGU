@@ -2,9 +2,14 @@ import React, { useContext, useState } from 'react'
 import { Context } from '../Context/StoreContext';
 import styles from './Menu.module.css';
 import { menu_list } from '../assets/assets';
+
 const Menu = () => {
-    const {catagory,setCatagory} = useContext(Context)
+    const {catagory,setCatagory
+    } = useContext(Context)
     return (
+      <>
+        
+      
         <div className={styles.menuContainer}>
             <h3>Explore our menu here</h3>
             <div className={styles.menuItems}>
@@ -16,6 +21,7 @@ const Menu = () => {
                 })}
             </div>
         </div>
+        </>
     )
 }
 

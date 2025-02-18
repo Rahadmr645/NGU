@@ -5,7 +5,12 @@ export const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
     const [catagory , setCatagory] = useState('All');
-    
+   const [showLogin, setShowLogin] = useState(false) ;
+    const [formData,setFormData] = useState({
+      name : "",
+      email : "",
+      password : "",
+    });
 
     useEffect(() => {
         console.log(catagory);
@@ -15,6 +20,10 @@ export const ContextProvider = ({ children }) => {
     const contextValue = {
         catagory,
         setCatagory,
+        formData,
+        setFormData,
+        showLogin,
+        setShowLogin,
     }
 
 
