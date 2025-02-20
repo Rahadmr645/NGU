@@ -1,0 +1,74 @@
+.loginContainer{
+  width : 100%;
+  height: 130vh;
+  border: 1px solid green;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(5px);
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between ; 
+  margin-top:10px;
+}
+
+@media (max-width: 475px) {
+  .loginContainer{
+    width: 492.5px;
+  }
+  .header img {
+    width: 20px;
+    height: 20px;
+  }
+  .loginContainer .form {
+  width: 300px;
+  height: 50vh;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(10px);
+  border: none; 
+  border-radius: 10px;
+  padding: 10px;
+  color: black;
+  display: flex ;
+  flex-direction: column; 
+}
+.inputContent{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top : 20px;
+  font-size: 20px;
+}
+.inputContent .input {
+  display: flex;
+  justify-content: space-between;
+}
+.inputContent .input input {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+.subBtn{
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  width: 200px;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.extraOption p{
+ margin-top : 20px;
+ font-size: 15px;
+}
+.extraOption p span{
+  color: tomato;
+}
+.extraOption p span:hover {
+  border-bottom: 1px solid tomato;
+}
+}

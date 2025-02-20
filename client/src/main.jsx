@@ -7,6 +7,7 @@ import eruda from 'eruda';
 import { BrowserRouter } from 'react-router-dom';
 import { ContextProvider } from './Context/StoreContext.jsx';
 eruda.init();
+
 createRoot(document.getElementById('root')).render(
   <ContextProvider>
     <BrowserRouter>

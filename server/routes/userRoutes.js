@@ -36,4 +36,26 @@ router.post("/create", async (req,res) => {
 }) ;
 
 
+router.post("/login", async (req,res) => {
+  try{
+   const {email,password} = req.body;
+    
+   if(!email  || !password ) {
+     return res.status(400).json({message:"please fill the field"})
+   }
+   
+   const isExist = await User.findOne({email}) ;
+   if(!isExist) return  res.status(400).json({message:"Anauthorised credintial"})
+     const comparePass = await bcrypt.compare(isExist.password, password)
+     
+    if(!comparePass) return alert("Anauthorised credintial");
+     const token = JWT.sign({id:
+     isExist._id,name:isExist.name,email:isExist.email},
+     SECRET_KEY,{expiresIn:"1h"});
+     res.status(200).json({message:"User Login successfully",isExist,token})
+  }catch(error) {
+    res.status(400).json({message:"faild to login user",error})
+  }
+}) ;
+
 export default router;
