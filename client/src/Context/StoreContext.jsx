@@ -6,6 +6,7 @@ export const ContextProvider = ({ children }) => {
     const [catagory , setCatagory] = useState('All');
    const [showLogin, setShowLogin] = useState(false) ;
    const [currState,setCurrState] = useState("Sign Up") ;
+   const URL = 'https://ngu-backend.vercel.app'
     const [formData,setFormData] = useState({
       name : "",
       email : "",
@@ -19,10 +20,10 @@ const onChangeHandler = (e) => {
 
 const onSubmitHandler = async(e) =>{
   e.preventDefault();
-  const URL = currState ==="Sign Up"? "http://localhost:4003/api/user/create/"
-    :"http://localhost:4003/api/user/login/"
+  const url = currState ==="Sign Up"? `${URL}/create/`
+    :`${URL}login/`
   try{ 
-  const response = await axios.post(URL,formData)
+  const response = await axios.post(url,formData)
   
   if(response) {
     alert(response.data.message);
