@@ -19,7 +19,9 @@ app.use('/api/user/',  userRoutes)
 app.use('/',(req,res) =>{
     res.send("Wellcome dear")
 })
-
+app.use('/rahad', (req,res) => {
+    res.send("fock you its working");
+})
 
 app.listen(PORT, () =>{
     console.log(`App is running on http://localhost:${PORT}`);
