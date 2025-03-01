@@ -8,9 +8,14 @@ const app = express();
 dotenv.config();
 
 const PORT = process.env.PORT;
+const corsOptions = {
+    origin: "https://yourfrontenddomain.com", // Replace with your actual frontend domain
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  };
 
 app.use(express.json());
-app.use(cors())
+app.use(cors(corsOptions))
 ConnectToMongo();
 
 
