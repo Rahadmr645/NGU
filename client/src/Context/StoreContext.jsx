@@ -1,48 +1,51 @@
 import { createContext, useEffect, useState } from "react";
-import axios from "axios"
+import axios from "axios";
+
 export const Context = createContext();
 
 export const ContextProvider = ({ children }) => {
     const [catagory , setCatagory] = useState('All');
-   const [showLogin, setShowLogin] = useState(false) ;
-   const [currState,setCurrState] = useState("Sign Up") ;
-   const URL = 'https://ngu-backend.vercel.app'
-    const [formData,setFormData] = useState({
-      name : "",
-      email : "",
-      password : "",
+    const [showLogin, setShowLogin] = useState(false);
+    const [currState, setCurrState] = useState("Sign Up");
+    const URL = 'https://ngu-backend.vercel.app';
+    
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        password: "",
     });
     
-    
-const onChangeHandler = (e) => {
- setFormData({...formData,[e.target.name] : e.target.value});
-}
+    const onChangeHandler = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
 
-const onSubmitHandler = async(e) =>{
-  e.preventDefault();
-  const url = currState ==="Sign Up"? `${URL}/create/`
-    :`${URL}login/`
-  try{ 
-  const response = await axios.post(url,formData)
-  
-  if(response) {
-    alert(response.data.message);
-    console.log({user :response.data.newUser,token :response.data.token})
-    setFormData({
-    name: "",
-    email: "",
-    password: "",
-  })
-  setShowLogin(false);
-  } else {
-    return alert(response.data.message)
-  }
-  
-  }catch(error) {
-    console.error(error);
-  }
-}
-   
+    const onSubmitHandler = async (e) => {
+        e.preventDefault();
+        
+        const url = currState === "Sign Up" ? `${URL}/create/` : `${URL}/login/`;
+
+        try { 
+            const response = await axios.post(url, formData);
+
+            if (response && response.data) {
+                alert(response.data.message); 
+                console.log({ user: response.data.newUser, token: response.data.token });
+                setFormData({
+                    name: "",
+                    email: "",
+                    password: "",
+                });
+                setShowLogin(false);
+            } else {
+                alert("An error occurred. Please try again.");
+            }
+
+        } catch (error) {
+            console.error("Error during form submission:", error);
+            alert("An error occurred. Please try again.");
+        }
+    }
+
     const contextValue = {
         catagory,
         setCatagory,
@@ -53,9 +56,8 @@ const onSubmitHandler = async(e) =>{
         onSubmitHandler,
         onChangeHandler,
         currState,
-        setCurrState, 
+        setCurrState,
     }
-
 
     return (
         <Context.Provider value={contextValue}>
